@@ -1,14 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('set non zero ') {
       steps {
-        warnError(message: 'Snyk issues found')
+        catchError(buildResult: 'issues', stageResult: 'Stable')
       }
     }
-    stage('Synk Dep check') {
+    stage('Snyk dep check') {
       steps {
-        snykSecurity(snykTokenId: '223a828a-794f-42cc-b3bb-df2f6d0d790a', snykInstallation: 'Snyk', projectName: 'hackazon', organisation: 'jose-alvarez-arm')
+        snykSecurity(organisation: 'jose-alvarez-arm', projectName: 'hackazon', snykInstallation: 'Snyk')
       }
     }
   }
