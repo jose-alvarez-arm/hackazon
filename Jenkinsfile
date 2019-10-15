@@ -1,9 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('Snyk Dep Check') {
+    stage('building binary') {
       steps {
-        snykSecurity(projectName: 'hackazon', snykTokenId: '223a828a-794f-42cc-b3bb-df2f6d0d790a', snykInstallation: 'Snyk', organisation: 'jose-alvarez-arm', additionalArguments: '--FailOnIssues=false')
+        build 'echo \'Building\''
+      }
+    }
+    stage('') {
+      steps {
+        snykSecurity(organisation: 'jose-alvarez-arm', projectName: 'Hackazon', snykInstallation: 'Snyk')
       }
     }
   }
