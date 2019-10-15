@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('set non zero ') {
       steps {
-        catchError(buildResult: 'issues', stageResult: 'Stable')
+        catchError(buildResult: '!0', stageResult: 'Stable')
       }
     }
     stage('Snyk dep check') {
