@@ -3,10 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        script {
-          echo 'building'
-        }
-
+        warnError(message: 'Snyk issues found')
       }
     }
     stage('Synk Dep check') {
