@@ -10,7 +10,7 @@ pipeline {
         }
         stage('non zero') {
           steps {
-            findText(regexp: 'issues', succeedIfFound: true, unstableIfFound: true, alsoCheckConsoleOutput: true)
+            findText(regexp: 'Archiving artifacts', succeedIfFound: true, alsoCheckConsoleOutput: true)
           }
         }
       }
