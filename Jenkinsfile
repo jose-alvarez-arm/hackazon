@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Snyk Dep Check') {
+    stage('') {
       steps {
-        snykSecurity(projectName: 'Hackazon', snykTokenId: 'snyk-token', snykInstallation: 'Snyk', organisation: 'jose-alvarez-arm', severity: 'low')
+        snykSecurity(organisation: 'jose-alvarez-arm', projectName: 'Hackazon', severity: 'low', snykInstallation: 'Snyk', snykTokenId: 'snyk-token')
       }
     }
   }
